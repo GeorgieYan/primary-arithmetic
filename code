@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define M 10
+
+int main(){
+    long A, B;
+    char SA[M],SB[M];
+    int C, num;
+    while(scanf("%l %l", &A, &B) == 2 && (A || B)){
+        num = C = 0;
+        while(A || B){
+            C = (C + A % 10 + B % 10) / 10;
+            A /= 10;
+            B /= 10;
+            num += C;
+        }
+
+        if(num == 1){
+            printf("1 carry operation.\n");
+        }
+        else if(num > 1){
+            printf("%d carry operations.\n",num);
+        }
+        else{
+            printf("No carry operation.\n");
+        }
+    }
+    return 0;
+}
+
+//blog spot
